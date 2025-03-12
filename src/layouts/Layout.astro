@@ -1,0 +1,101 @@
+---
+
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./picture/icopng/favicon.ico" />
+    <title>{title} - 华晟复材科技有限公司</title>
+  </head>
+  <body class="bg-light dark:bg-dark text-dark dark:text-light">
+    <header class="fixed w-full bg-white/90 dark:bg-dark/90 backdrop-blur z-50 shadow-md">
+      <nav class="container mx-auto py-4 px-6 flex justify-between items-center">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="./picture/icopng/favicon.ico" alt="Logo" width="40" height="40" />
+          <span class="text-xl font-bold">华晟复材科技</span>
+        </a>
+        <div class="hidden md:flex space-x-8">
+          <a href="/" class="hover:text-accent transition-colors">首页</a>
+          <a href="/products" class="hover:text-accent transition-colors">产品中心</a>
+          <a href="/technology" class="hover:text-accent transition-colors">技术优势</a>
+          <a href="/applications" class="hover:text-accent transition-colors">应用案例</a>
+          <a href="/about" class="hover:text-accent transition-colors">关于我们</a>
+          <a href="/contact" class="hover:text-accent transition-colors">联系我们</a>
+        </div>
+        <button class="md:hidden" id="menu-toggle">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="/" class="block hover:text-accent transition-colors">首页</a>
+          <a href="/products" class="block hover:text-accent transition-colors">产品中心</a>
+          <a href="/technology" class="block hover:text-accent transition-colors">技术优势</a>
+          <a href="/applications" class="block hover:text-accent transition-colors">应用案例</a>
+          <a href="/about" class="block hover:text-accent transition-colors">关于我们</a>
+          <a href="/contact" class="block hover:text-accent transition-colors">联系我们</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">联系我们</h3>
+            <p>地址：西安市高新区</p>
+            <p>电话：029-XXXXXXXX</p>
+            <p>邮箱：info@huasheng.com</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">快速链接</h3>
+            <ul class="space-y-2">
+              <li><a href="/products" class="hover:text-accent transition-colors">产品中心</a></li>
+              <li><a href="/technology" class="hover:text-accent transition-colors">技术优势</a></li>
+              <li><a href="/applications" class="hover:text-accent transition-colors">应用案例</a></li>
+              <li><a href="/about" class="hover:text-accent transition-colors">关于我们</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">关注我们</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-accent transition-colors">微信</a>
+              <a href="#" class="hover:text-accent transition-colors">微博</a>
+              <a href="#" class="hover:text-accent transition-colors">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-white/20 text-center">
+          <p>&copy; 2023 华晟复材科技有限公司. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 移动端菜单切换
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 技术数据
+const technologies = [
+  {
+    title: '多轴联动控制技术',
+    description: '采用高精度多轴联动控制系统，实现复杂曲面的精确铺放。系统可同时控制多达8个运动轴，铺放精度达到±0.5mm，满足航空航天领域高精度复合材料构件的制造需求。',
+    image: './picture/AFP3.jpg'
+  },
+  {
+    title: '在线质量监测技术',
+    description: '配备先进的视觉检测系统，实时监控铺放质量，确保产品一致性。系统可检测纤维铺放间隙、重叠、褶皱等缺陷，并自动记录缺陷位置和类型，为质量追溯提供数据支持。',
+    image: './picture/AFP4.jpg'
+  },
+  {
+    title: '轨迹规划算法',
+    description: '自主研发的轨迹规划算法，可根据零件几何特征和铺放要求，自动生成最优铺放路径，提高铺放效率和质量。算法考虑了纤维方向、铺放速度、转弯半径等多种因素，实现了复杂构件的高效铺放。',
+    image: './picture/AFP5.jpg'
+  },
+  {
+    title: '热固成型技术',
+    description: '创新的热固成型技术，可在铺放过程中对材料进行预热和压实，提高层间结合强度。系统配备了精确的温度控制装置，可根据不同材料的特性调整加热温度和压实力，确保铺放质量。',
+    image: './picture/AFP6.jpg'
+  }
+];
+
+// 专利列表
+const patents = [
+  '一种用于复合材料构件制造的自动铺丝装置（专利号：CN201XXXXXXX）',
+  '一种复合材料自动铺带机的送带系统（专利号：CN201XXXXXXX）',
+  '一种适用于复杂曲面的纤维铺放路径规划方法（专利号：CN201XXXXXXX）',
+  '一种连续纤维增强复合材料3D打印设备（专利号：CN201XXXXXXX）',
+  '一种复合材料构件制造中的在线质量监测系统（专利号：CN201XXXXXXX）'
+];
+---
+
+<Layout title="技术优势">
+  <section class="py-20 pt-32 bg-light dark:bg-dark">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center mb-12">技术优势</h1>
+      
+      <!-- 核心技术 -->
+      <div class="space-y-16">
+        {technologies.map((tech, index) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class={index % 2 === 1 ? "md:order-2" : ""}>
+              <h2 class="text-2xl font-bold mb-4">{tech.title}</h2>
+              <p class="text-gray-600 dark:text-gray-300">
+                {tech.description}
+              </p>
+            </div>
+            
+            <div class={index % 2 === 1 ? "md:order-1" : ""}>
+              <img 
+                src={tech.image} 
+                alt={tech.title} 
+                class="w-full h-auto rounded-lg shadow-lg" 
+              />
+            </div>
+            
+            {index < technologies.length - 1 && (
+              <div class="col-span-1 md:col-span-2 border-b border-gray-200 dark:border-gray-700 my-8"></div>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <!-- 专利技术 -->
+      <div class="bg-white dark:bg-secondary p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-6 text-center">专利技术</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 text-center">
+          华晟复材拥有27项国家发明专利、4项实用新型专利和12项软件著作权，部分代表性专利如下：
+        </p>
+        
+        <ul class="list-disc list-inside space-y-3 max-w-3xl mx-auto">
+          {patents.map((patent) => (
+            <li class="text-gray-600 dark:text-gray-300">{patent}</li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- 研发团队 -->
+      <div class="mt-20">
+        <h2 class="text-3xl font-bold mb-6 text-center">研发团队</h2>
+        <div class="bg-primary text-white p-8 rounded-lg shadow-lg">
+          <p class="mb-4">
+            华晟复材拥有一支由博士、硕士组成的高水平研发团队，团队成员来自西安交通大学、西北工业大学等知名高校，在复合材料自动化装备领域有着深厚的研究积累。
+          </p>
+          <p class="mb-4">
+            研发团队与多家科研院所和高校保持紧密合作，共同推进复合材料制造技术的创新与应用。团队定期参与国内外学术交流活动，及时了解行业最新发展动态。
+          </p>
+          <p>
+            公司高度重视研发投入，每年将销售额的15%以上用于新技术、新产品的研发，确保技术的持续领先性。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

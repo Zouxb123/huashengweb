@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="关于我们">
+  <section class="py-20 pt-32 bg-light dark:bg-dark">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center mb-12">关于华晟复材</h1>
+      
+      <!-- 公司简介 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">公司简介</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            华晟复材科技有限公司是先进复合材料自动化装备的研发和制造企业，主要产品包括碳纤维铺丝/铺带机系列成套设备、连续纤维复材3D打印成套设备等。
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            公司依托西安交通大学段玉岗教授科研团队的技术成果，在自动铺丝领域处于国内领先地位，拥有27项国家发明专利、4项实用新型专利和12项软件著作权。
+          </p>
+          <p class="text-gray-600 dark:text-gray-300">
+            华晟复材致力于为航空航天、风电、新能源汽车、高铁等领域提供高性能复合材料制造解决方案，助力中国高端装备制造业的发展。
+          </p>
+        </div>
+        <div>
+          <img 
+            src="./picture/AFP2.jpg" 
+            alt="公司简介" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+      
+      <!-- 发展历程 -->
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-8">发展历程</h2>
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-accent"></div>
+          <div class="space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="md:text-right md:pr-12 relative">
+                <div class="hidden md:block absolute right-0 top-5 transform translate-x-6 w-4 h-4 rounded-full bg-accent"></div>
+                <h3 class="text-xl font-bold mb-2">2015年</h3>
+                <p class="text-gray-600 dark:text-gray-300">公司成立，开始研发碳纤维自动铺丝设备</p>
+              </div>
+              <div class="md:pl-12"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="md:pl-12"></div>
+              <div class="md:pl-12 relative">
+                <div class="hidden md:block absolute left-0 top-5 transform -translate-x-6 w-4 h-4 rounded-full bg-accent"></div>
+                <h3 class="text-xl font-bold mb-2">2017年</h3>
+                <p class="text-gray-600 dark:text-gray-300">成功研制出国内首台具有自主知识产权的碳纤维自动铺丝设备</p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="md:text-right md:pr-12 relative">
+                <div class="hidden md:block absolute right-0 top-5 transform translate-x-6 w-4 h-4 rounded-full bg-accent"></div>
+                <h3 class="text-xl font-bold mb-2">2019年</h3>
+                <p class="text-gray-600 dark:text-gray-300">产品线扩展，开发出自动铺带设备和复材3D打印设备</p>
+              </div>
+              <div class="md:pl-12"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="md:pl-12"></div>
+              <div class="md:pl-12 relative">
+                <div class="hidden md:block absolute left-0 top-5 transform -translate-x-6 w-4 h-4 rounded-full bg-accent"></div>
+                <h3 class="text-xl font-bold mb-2">2021年</h3>
+                <p class="text-gray-600 dark:text-gray-300">获得A轮融资，建立现代化生产基地</p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="md:text-right md:pr-12 relative">
+                <div class="hidden md:block absolute right-0 top-5 transform translate-x-6 w-4 h-4 rounded-full bg-accent"></div>
+                <h3 class="text-xl font-bold mb-2">2022年至今</h3>
+                <p class="text-gray-600 dark:text-gray-300">持续创新技术，产品不断升级，市场份额稳步提升</p>
+              </div>
+              <div class="md:pl-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 企业文化 -->
+      <div class="bg-white dark:bg-secondary p-8 rounded-lg shadow-lg mb-20">
+        <h2 class="text-3xl font-bold text-center mb-8">企业文化</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <h3 class="text-xl font-bold mb-3 text-accent">企业愿景</h3>
+            <p class="text-gray-600 dark:text-gray-300">成为全球领先的复合材料智能制造装备供应商</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-3 text-accent">企业使命</h3>
+            <p class="text-gray-600 dark:text-gray-300">用科技创新推动复合材料产业升级</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-3 text-accent">核心价值观</h3>
+            <p class="text-gray-600 dark:text-gray-300">创新、品质、诚信、共赢</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 团队介绍 -->
+      <div>
+        <h2 class="text-3xl font-bold text-center mb-8">核心团队</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-secondary p-6 rounded-lg shadow-lg text-center">
+            <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold mb-2">段玉岗</h3>
+            <p class="text-accent mb-2">创始人 & CEO</p>
+            <p class="text-gray-600 dark:text-gray-300">西安交通大学教授，复合材料领域专家，拥有20余年行业经验</p>
+          </div>
+          
+          <div class="bg-white dark:bg-secondary p-6 rounded-lg shadow-lg text-center">
+            <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold mb-2">陈斌</h3>
+            <p class="text-accent mb-2">CTO</p>
+            <p class="text-gray-600 dark:text-gray-300">前航空航天研究院高级工程师，自动控制系统专家</p>
+          </div>
+          
+          <div class="bg-white dark:bg-secondary p-6 rounded-lg shadow-lg text-center">
+            <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold mb-2">张少秋</h3>
+            <p class="text-accent mb-2">研发总监</p>
+            <p class="text-gray-600 dark:text-gray-300">机械设计专家，曾主导多项国家重点研发项目</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

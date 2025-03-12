@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 应用案例数据
+const applications = [
+  {
+    title: '航空航天领域',
+    description: '华晟复材的自动铺丝设备被应用于多种航空航天复合材料构件的制造，包括飞机机翼、尾翼、机身蒙皮等关键部件。我们的设备可以处理碳纤维、玻璃纤维、芳纶纤维等多种材料，满足航空航天领域对高性能、轻量化结构件的需求。',
+    image: './picture/AFP3.jpg'
+  },
+  {
+    title: '风电叶片制造',
+    description: '风力发电叶片是复合材料的重要应用领域。华晟复材的自动铺带设备可用于大型风电叶片的制造，提高生产效率和产品质量。我们的设备可以处理宽幅预浸带材，实现快速、精确的铺放，大大缩短了风电叶片的生产周期。',
+    image: './picture/ATL3.jpg'
+  },
+  {
+    title: '汽车轻量化',
+    description: '在新能源汽车领域，轻量化是提高续航里程的关键。华晟复材的设备被应用于汽车底盘、车身结构件等复合材料部件的制造。我们的3D打印设备还可以快速成型复杂形状的汽车内饰件，为汽车轻量化提供了新的解决方案。',
+    image: './picture/ATL4.jpg'
+  },
+  {
+    title: '高铁车辆制造',
+    description: '高速列车对材料的轻量化和高强度有着严格要求。华晟复材的自动化设备被应用于高铁车厢、车头等部件的复合材料制造，提高了产品的一致性和可靠性，同时降低了生产成本。',
+    image: './picture/ATL5.jpg'
+  },
+  {
+    title: '体育休闲用品',
+    description: '在高端体育用品领域，复合材料因其轻量高强的特性被广泛应用。华晟复材的3D打印设备可用于制造自行车车架、网球拍、高尔夫球杆等体育用品，实现个性化定制和快速原型开发。',
+    image: './picture/ATL6.jpg'
+  }
+];
+---
+
+<Layout title="应用案例">
+  <section class="py-20 pt-32 bg-light dark:bg-dark">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center mb-12">应用案例</h1>
+      
+      <!-- 应用案例列表 -->
+      <div class="space-y-20">
+        {applications.map((app, index) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class={index % 2 === 0 ? "" : "md:order-2"}>
+              <h2 class="text-2xl font-bold mb-4">{app.title}</h2>
+              <p class="text-gray-600 dark:text-gray-300">
+                {app.description}
+              </p>
+            </div>
+            
+            <div class={index % 2 === 0 ? "" : "md:order-1"}>
+              <img 
+                src={app.image} 
+                alt={app.title} 
+                class="w-full h-auto rounded-lg shadow-lg" 
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- 客户反馈 -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">客户反馈</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white/10 p-6 rounded-lg">
+          <p class="mb-4 italic">"华晟复材的自动铺丝设备帮助我们提高了生产效率，降低了人工成本，产品质量更加稳定可靠。"</p>
+          <p class="font-bold">— 某航空制造企业负责人</p>
+        </div>
+        
+        <div class="bg-white/10 p-6 rounded-lg">
+          <p class="mb-4 italic">"公司的技术团队专业素质高，设备安装调试和售后服务都非常及时到位，解决了我们的燃眉之急。"</p>
+          <p class="font-bold">— 某风电设备制造商</p>
+        </div>
+        
+        <div class="bg-white/10 p-6 rounded-lg">
+          <p class="mb-4 italic">"华晟复材的3D打印设备为我们的新产品开发提供了强有力的支持，大大缩短了产品的研发周期。"</p>
+          <p class="font-bold">— 某汽车零部件企业研发主管</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 产品数据
+const products = [
+  {
+    title: '自动铺丝设备',
+    description: '高精度、高效率的碳纤维自动铺丝设备，适用于航空航天领域的复合材料制造。系统可同时控制多达8个运动轴，铺放精度达到±0.5mm，满足航空航天领域高精度复合材料构件的制造需求。',
+    image: './picture/AFP1.jpg',
+    features: [
+      '多轴联动控制系统',
+      '实时质量监测系统',
+      '智能化操作界面',
+      '自动化材料处理系统'
+    ]
+  },
+  {
+    title: '自动铺带设备',
+    description: '大型复合材料构件制造的理想设备，广泛应用于风电叶片、压力容器等领域。设备可处理宽幅预浸带材，实现快速、精确的铺放，大大缩短了大型复合材料构件的生产周期。',
+    image: './picture/ATL1.jpg',
+    features: [
+      '高效铺放系统',
+      '精确定位控制',
+      '自动化裁切系统',
+      '多材料兼容性'
+    ]
+  },
+  {
+    title: '复材3D打印设备',
+    description: '连续纤维增强复合材料3D打印设备，可实现高性能复合材料零件的快速成型。采用独特的纤维铺放技术，打印的零件具有优异的力学性能，可满足功能性应用需求。',
+    image: './picture/3Dprint1.jpg',
+    features: [
+      '连续纤维增强技术',
+      '多材料打印能力',
+      '智能路径规划',
+      '开放式材料系统'
+    ]
+  }
+];
+---
+
+<Layout title="产品中心">
+  <section class="py-20 pt-32 bg-light dark:bg-dark">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center mb-12">产品中心</h1>
+      
+      <!-- 产品详情 -->
+      <div class="space-y-24">
+        {products.map((product, index) => (
+          <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 class="text-3xl font-bold mb-4">{product.title}</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                  {product.description}
+                </p>
+                
+                <h3 class="text-xl font-bold mb-3">主要特点</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-6">
+                  {product.features.map(feature => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
+                
+                <button class="bg-accent hover:bg-accent/90 text-white px-6 py-2 rounded-lg transition-colors">
+                  获取产品资料
+                </button>
+              </div>
+              
+              <div>
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  class="w-full h-auto rounded-lg shadow-lg" 
+                />
+              </div>
+            </div>
+            
+            {index < products.length - 1 && (
+              <div class="border-b border-gray-200 dark:border-gray-700 my-12"></div>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <!-- 定制服务 -->
+      <div class="mt-24 bg-primary text-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-4 text-center">定制化服务</h2>
+        <p class="text-center mb-6">
+          除了标准产品外，华晟复材还提供定制化解决方案，根据客户的具体需求设计和制造专用设备。
+        </p>
+        <div class="text-center">
+          <a href="/contact" class="inline-block bg-white text-primary hover:bg-gray-100 px-6 py-2 rounded-lg transition-colors font-bold">
+            联系我们咨询
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

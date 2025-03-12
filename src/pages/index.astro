@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 产品数据
+const products = [
+  {
+    title: '自动铺丝设备',
+    description: '高精度、高效率的碳纤维自动铺丝设备，适用于航空航天领域的复合材料制造。',
+    image: './picture/AFP1.jpg',
+    link: '/products'
+  },
+  {
+    title: '自动铺带设备',
+    description: '大型复合材料构件制造的理想设备，广泛应用于风电叶片、压力容器等领域。',
+    image: './picture/ATL1.jpg',
+    link: '/products'
+  },
+  {
+    title: '复材3D打印设备',
+    description: '连续纤维增强复合材料3D打印设备，可实现高性能复合材料零件的快速成型。',
+    image: './picture/3Dprint1.jpg',
+    link: '/products'
+  }
+];
+
+// 技术特点
+const features = [
+  {
+    title: '多轴联动控制',
+    description: '采用高精度多轴联动控制系统，实现复杂曲面的精确铺放。',
+    icon: './picture/icopng/javascript.ico'
+  },
+  {
+    title: '实时监测系统',
+    description: '配备先进的视觉检测系统，实时监控铺放质量，确保产品一致性。',
+    icon: './picture/icopng/python.ico'
+  },
+  {
+    title: '智能化操作界面',
+    description: '人性化的操作界面设计，简化操作流程，提高生产效率。',
+    icon: './picture/icopng/vue.ico'
+  }
+];
+---
+
+<Layout title="首页">
+  <!-- 首屏视频背景 -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <video
+      class="absolute w-full h-full object-cover"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      <source src="./video/AFP.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative text-white text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">华晟复材科技</h1>
+      <p class="text-xl md:text-2xl mb-8">先进复合材料自动化装备的引领者</p>
+      <a
+        href="/products"
+        class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg transition-colors"
+      >
+        了解更多
+      </a>
+    </div>
+  </section>
+
+  <!-- 产品展示 -->
+  <section class="py-20 bg-light dark:bg-dark">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">主要产品</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {products.map((product, index) => (
+          <div
+            class="bg-white dark:bg-secondary rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              width="400"
+              height="300"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{product.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">{product.description}</p>
+              <a
+                href={product.link}
+                class="text-accent hover:text-accent/90 font-medium"
+              >
+                查看详情 →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术优势 -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">技术优势</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div
+            class="text-center"
+          >
+            <img
+              src={feature.icon}
+              alt={feature.title}
+              width="64"
+              height="64"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+            <p class="text-gray-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section class="py-20 bg-light dark:bg-dark">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">关于华晟复材</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            华晟复材科技有限公司是先进复合材料自动化装备的研发和制造企业，主要产品包括碳纤维铺丝/铺带机系列成套设备、连续纤维复材3D打印成套设备等。
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            公司依托西安交通大学段玉岗教授科研团队的技术成果，在自动铺丝领域处于国内领先地位，拥有27项国家发明专利、4项实用新型专利和12项软件著作权。
+          </p>
+          <a href="/about" class="text-accent hover:text-accent/90 font-medium">了解更多 →</a>
+        </div>
+        <div>
+          <img src="./picture/AFP2.jpg" alt="关于我们" class="w-full h-auto rounded-lg shadow-lg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作伙伴 -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">合作伙伴</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition-opacity bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+          <img
+            src="./picture/icopng/java.ico"
+            alt="Partner 1"
+            width="64"
+            height="64"
+            class="mx-auto"
+          />
+        </a>
+        <a href="https://weread.qq.com/web/shelf" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition-opacity bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+          <img
+            src="./picture/icopng/vue.ico"
+            alt="Partner 2"
+            width="64"
+            height="64"
+            class="mx-auto"
+          />
+        </a>
+        <a href="https://www.misumi.com.cn/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition-opacity bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+          <img
+            src="./picture/icopng/react.ico"
+            alt="Partner 3"
+            width="64"
+            height="64"
+            class="mx-auto"
+          />
+        </a>
+        <a href="https://metaso.cn/browser-setting" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition-opacity bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+          <img
+            src="./picture/icopng/python.ico"
+            alt="Partner 4"
+            width="64"
+            height="64"
+            class="mx-auto"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
